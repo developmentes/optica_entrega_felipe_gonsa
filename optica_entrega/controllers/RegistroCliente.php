@@ -38,7 +38,8 @@ class RegistroCliente
             return;
         }
         $modelo = new ClienteModel();
-        $data = ['rutCliente' => $this->rut_cliente, 'nombre_cliente' => $this->nombre_cliente, 'rol' => $this->rol , 'clave' => $this->clave, 'estado' => $this->estado];
+        $data = ['rutCliente' => $this->rut_cliente, 'nombre_cliente' => $this->nombre_cliente, 'direccion_cliente' => $this->direccion_cliente ,
+         'telefono_cliente' => $this->telefono_cliente, 'fecha_creacion' => $this->fecha_creacion , 'email_cliente' => $this->email_cliente];
         $count = $modelo->insertarCliente($data);
 
         if ($count == 1) {
@@ -46,7 +47,7 @@ class RegistroCliente
         } else {
             $_SESSION['error'] = "Hubo un error en la base de datos";
         }
-        header("Location: ../views/clienteAdmin.php");
+        header("Location: ../views/vendedor/crearCliente.php");
     }
 }
 

@@ -25,20 +25,20 @@ class LoginControllerVendedor {
         session_start();
         if ($this->rut == "" || $this->clave == "") {
             $_SESSION['error'] = "rut o usuario incorrecto";
-            header("Location: ../views/loginVendedor.php");
+            header("Location: ../views/vendedor/loginVendedor.php");
             return;
         }
         $modelo = new UsuarioModel();
         $array = $modelo->buscarUsuarioLogin($this->rut);
         if (count($array) == 0) {
             $_SESSION['error'] = "rut o clave no se encuentra";
-            header("Location: ../views/loginVendedor.php");
+            header("Location: ../views/vendedor/loginVendedor.php");
             return;
         }
 
-        // $_SESSION['usuario'] = $array[0];
+         $_SESSION['vendedor'] = $array[0];
         
-        header("Location: ../views/crearCliente.php");
+        header("Location: ../views/vendedor/crearCliente.php");
     }
 }
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/styleV.css">
+    <link rel="stylesheet" href="../../css/styleV.css">
 </head>
 
 <body>
@@ -44,7 +44,7 @@
 
 
 
-                <form action="../controllers/LoginControllerVendedor.php" method="POST">
+                <form action="../../controllers/LoginControllerVendedor.php" method="POST">
                     <div class="input-field">
                     <i class="material-icons prefix">account_circle</i>
                         <input id="rut" type="text" name="rut">

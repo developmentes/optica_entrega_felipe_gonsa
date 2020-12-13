@@ -15,7 +15,7 @@ class ClienteModel
         $stm->bindParam(":A", $data['rut_cliente']);
         $stm->bindParam(":B", $data['nombre_cliente']);
         $stm->bindParam(":C", $data['direccion_cliente']);
-        $stm->bindParam(":D", md5($data['telefono_cliente'])); //123=> md5(123)=>wertyui56789234ds
+        $stm->bindParam(":D", ($data['telefono_cliente'])); //123=> md5(123)=>wertyui56789234ds
         $stm->bindParam(":E", $data['fecha_creacion']);
         $stm->bindParam(":F", $data['email_cliente']);
 

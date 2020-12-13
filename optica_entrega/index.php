@@ -27,11 +27,11 @@
              
                 </p>
                     <div class="input-field">
-                      <a href="views/loginAdmin.php"><button class="btn blue lighten-2 black-text" value="administrador black">Administrador</button></a>
+                      <a href="viewsloginAdmin.php"><button class="btn blue lighten-2 black-text" value="administrador black">Administrador</button></a>
                     </div>
                     
                     <div class="input-field">
-                         <a href="views/loginVendedor.php"><button class="btn blue lighten-2 black-text" value="vendedor">Vendedor</button></a>
+                         <a href="views/vendedor/loginVendedor.php"><button class="btn blue lighten-2 black-text" value="vendedor">Vendedor</button></a>
                     </div>
   
             </div>
