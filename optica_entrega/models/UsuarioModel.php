@@ -21,12 +21,12 @@ class UsuarioModel
     }
 
 
-    public function buscarUsuarioLogin($rut, $clave,$rol)
+    public function buscarUsuarioLogin($rut)
     {
-        $stm = Conexion::conector()->prepare("SELECT * FROM usuario WHERE rut=:A AND clave=:B AND rol=:C");
+        $stm = Conexion::conector()->prepare("SELECT * FROM usuario WHERE rut=:A ");
         $stm->bindParam(":A", $rut);
-        $stm->bindParam(":B", md5($clave));
-        $stm->bindParam(":C", $rol);
+
+     
         $stm->execute();
         return $stm->fetchAll(\PDO::FETCH_ASSOC);
        

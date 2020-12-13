@@ -118,26 +118,9 @@ if (isset($_SESSION['error1'])) {
 				</div>
 				<div class="clearfix"></div>
 
-				<div class="input-field col l6 m5" Style="padding-top: 45px;">
-					<i class="material-icons prefix" Style="padding-top: 45px;" >directions</i>
-					<input type="text" name="rol" id="rol">
-					<label for="rol" Style="padding-top: 45px;">Rol</label>
-				</div>
-				<div class="input-field col l6 m5" Style="padding-top: 45px;">
-					<i class="material-icons prefix" Style="padding-top: 45px;">https</i>
-					<input type="text" name="clave" id="clave">
-					<label for="clave" Style="padding-top: 45px;"> Clave </label>
-				</div>
-				<div class="input-field col l2 m5" Style="padding-top: 45px; margin-botton:50px">
-				<div class="clear-fix"></div>
-				<label>Estado de usuario</label>
-					<select class="browser-default" name="estado" >
-						<option class="blue" value="" disabled selected>Elija estado</option>
-						<option value="1">Activo</option>
-						<option value="0">Inactivo</option>
-					
-					</select>
-					</div>
+			
+			
+				
 			
 
 					<button class="btn blue lighten-2 black-text hoverable" Style="margin-left:350px; width:30%; margin-top:50px">Crear Usuario</button>

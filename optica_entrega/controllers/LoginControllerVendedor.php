@@ -17,7 +17,7 @@ class LoginControllerVendedor {
     {
         $this->rut = $_POST['rut'];
         $this->clave = $_POST['clave'];
-        $this->rol = $_POST['vendedor'];
+    
     }
 
     public function iniciarSesion()
@@ -29,7 +29,7 @@ class LoginControllerVendedor {
             return;
         }
         $modelo = new UsuarioModel();
-        $array = $modelo->buscarUsuarioLogin($this->rut, $this->clave,$this->rol);
+        $array = $modelo->buscarUsuarioLogin($this->rut);
         if (count($array) == 0) {
             $_SESSION['error'] = "rut o clave no se encuentra";
             header("Location: ../views/loginVendedor.php");

@@ -10,9 +10,6 @@ class CrearUsuarioController
 {
     public $rut;
     public $nombre;
-    public $rol;
-    public $clave;
-    public $estado;
   
 
     
@@ -22,9 +19,6 @@ class CrearUsuarioController
     {
         $this->rut = $_POST['rut'];
         $this->nombre = $_POST['nombre'];
-        $this->rol = $_POST['rol'];
-        $this->clave = $_POST['clave'];
-        $this->estado = $_POST['estado'];
     }
 
     public function registrarUsuario()
@@ -32,13 +26,13 @@ class CrearUsuarioController
 
         
         session_start();
-        if ($this->rut == "" || $this->nombre == "" || $this->rol == "" || $this->clave == "" || $this->estado == "") {
+        if ($this->rut == "" || $this->nombre == "" ) {
             $_SESSION['error1'] = "Complete la informacion";
             header("Location: ../views/crearUsuario.php");
             return;
         }
         $modelo = new UsuarioModel();
-        $data = ['rut' => $this->rut, 'nombre' => $this->nombre, 'rol' => $this->rol , 'clave' => $this->clave, 'estado' => $this->estado];
+        $data = ['rut' => $this->rut, 'nombre' => $this->nombre, 'rol' => 'vendedor' , 'clave' => '123456', 'estado' => 1];
         $count = $modelo->insertarUsuario($data);
 
         if ($count == 1) {

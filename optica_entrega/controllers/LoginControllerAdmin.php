@@ -29,7 +29,7 @@ class LoginControllerAdmin
         //     return;
         // }
         $modelo = new UsuarioModel();
-        $array = $modelo->buscarUsuarioLogin($this->rut, $this->clave, $this->rol);
+        $array = $modelo->buscarUsuarioLogin($this->rut, $this->clave);
        
          if(count($array) == 0) {
             $_SESSION['error'] = "rut o clave no se encuentra";
