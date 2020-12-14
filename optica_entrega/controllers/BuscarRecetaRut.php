@@ -23,7 +23,7 @@ class BuscarRecetaRut
         $arr = $modelo->buscarRecetaXRut($this->rut);
         $_SESSION["receta_rut"] = $arr;
 
-        header("Location: ../models/recetaConsulta.php");
+        header("Location: ../models/recetaRut.php");
     }
 }
 

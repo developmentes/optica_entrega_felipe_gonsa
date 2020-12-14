@@ -1,4 +1,11 @@
 <?php
+
+use models\RecetaModel as RecetaModel;
+require_once("../../models/RecetaModel.php");
+
+$modelo = new RecetaModel();
+
+$receta = $modelo->
 session_start();
 ?>
 
@@ -20,7 +27,7 @@ session_start();
 		$(document).ready(function() {
 			// $('select').formSelect();
 			$('.datepicker').datepicker({
-				format: 'dd/mm/yyyy',
+				format: 'yyyy/dd/mm/',
 				autoClose: 'true',
 				i18n: {
 					months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -54,10 +61,8 @@ session_start();
 		<div class="nav-wrapper">
 			<a href="#" class="brand-logo right"><img src="../../img/optica_img.png" alt="img not found" style="height: 60px;"></a>
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="recetaRut.php">Buscar Rut</a></li>
-				<li><a href="crearReceta.php">Ingreso Receta</a></li>
-				<li><a href="recetaPorId.php">Ingreso Receta</a></li>
-
+				<li><a href="../../recetaConsulta.php">Buscar Rut</a></li>
+				<li><a href="../../">Buscar nombre</a></li>
 				<li><a href="../../index.php">Home</a></li>
 				<li class="green-text">
 				
@@ -99,11 +104,59 @@ session_start();
 </p>
 
 			<form action="../../controllers/RegistroCliente.php" method="post" id="registro">
-				<div class="input-field col l6 col-m6">
-					<i class="material-icons prefix">account_circle</i>
-					<input type="text" name="rut_cliente" id="rut">
-					<label for="rut">Rut</label>
-				</div>
+            
+            <div class="input-field col s4"> 
+    <select >
+
+      <option value="" disabled selected>Elija una opcion</option>
+      <option value="cerca">cerca</option>
+      <option value="lejos">lejos</option>
+
+    </select>
+    <label>  Tipo lente</label>
+  
+    <div class="input-field col s4">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label> Tipo cristal</label>
+  
+
+  <div class="input-field col s4">
+    <select >
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Material cristal </label>
+  </div>
+
+  <div class="input-field col s4">
+    <select >
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Base</label>
+  </div>
+
+   <div class="input-field col s12">
+    <select >
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label> armazon </label>
+  </div>
+
+
+  
 				<div class="input-field col l6 col-m6">
 					<i class="material-icons prefix">account_circle</i>
 					<input type="text" name="nombre_cliente" id="nombre">
@@ -147,7 +200,9 @@ session_start();
 		<h2>No tienes permisos para esta aqui</h2>
 	<a href="../../index.php">Home</a>
 	<?php }?>
-
-
+    <script> document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });</script>
 </body>
 </html>
